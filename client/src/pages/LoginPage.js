@@ -26,7 +26,6 @@ const LoginPage = () => {
   }
 
   if (redirect) {
-    // console.log(redirect);
     return <Navigate to={"/"} />;
   }
   return (
