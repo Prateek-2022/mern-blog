@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Post from "../Post";
+import LoadingAnimation from "../component/LoadingAnimation";
 
 const IndexPage = () => {
   const [posts, setPosts] = useState([]);
@@ -10,6 +11,7 @@ const IndexPage = () => {
       });
     });
   }, []);
+  if (posts.length <= 0) return <LoadingAnimation />;
   return <>{posts.length > 0 && posts.map((post) => <Post {...post} />)}</>;
 };
 

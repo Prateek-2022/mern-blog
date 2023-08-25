@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 const Header = () => {
@@ -19,7 +19,9 @@ const Header = () => {
       credentials: "include",
       method: "POST",
     });
+    console.log(userInfo);
     setUserInfo(null);
+    redirect("/login");
   }
 
   const username = userInfo?.username;
